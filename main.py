@@ -5,9 +5,11 @@ import os
 api_key = os.environ.get("OWM_API_KEY")
 account_sid = os.environ.get("ACCOUNT_SID")
 auth_token = os.environ.get("AUTH_TOKEN")
+virtual_whatsapp_number = os.environ.get("VIRTUAL_WHATSAPP_NUMBER")
+personal_whatsapp_nunmber = os.environ.get("PERSONAL_WHATSAPP_NUMBER")
 
 forecast_data = {
-    "appid": API_KEY,
+    "appid": api_key,
     "lat": 54.356030,
     "lon": 18.646120,
     "cnt": 4
@@ -23,9 +25,9 @@ for hour_data in weather_data["list"]:
 if it_is_raining:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_= virtual_whatsapp_number,
         body="It's raining!",
-        to='whatsapp:+447821263319'
+        to= personal_whatsapp_nunmber
     )
     print(f"Message SID: {message.sid}")
         )
