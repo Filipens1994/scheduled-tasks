@@ -28,5 +28,4 @@ if it_is_raining:
         to='whatsapp:+447821263319'
     )
     print(f"Message SID: {message.sid}")
-            msg=f"Subject:Happy Birthday!\n\n{contents}"
         )
